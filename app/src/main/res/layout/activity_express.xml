@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <Spinner
+        android:id="@+id/exress_sn_company"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+        <EditText
+            android:id="@+id/express_ed_number"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:hint="快递编号"
+            android:inputType="number"
+            android:text="3908977889430"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/express_btn_check"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="@string/check"
+            android:background="@drawable/button_theme_bg"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/express_ll_expressinfo_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:divider="@null"
+        android:backgroundTintMode="@null">
+    </ListView>
+</LinearLayout>

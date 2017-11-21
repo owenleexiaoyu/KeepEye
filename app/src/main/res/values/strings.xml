@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">着眼</string>
+    <string name="chat_robot">聊天助手</string>
+    <string name="user">个人中心</string>
+    <string name="article">精选文章</string>
+    <string name="girlphoto">美女如云</string>
+    <string name="setting">设置</string>
+    <string name="skip">跳过</string>
+    <string name="into">进入</string>
+    <string name="welword_one">也许我爱的已不是你\n是对你付出的热情\n就像一座神庙\n即使荒芜\n仍然是祭坛\n一座雕像\n即使坍塌\n仍然是神</string>
+    <string name="welword_two">你不愿意种花\n你说\n我不愿看见它\n一点点凋落\n是的\n为了避免结束\n你避免了所有开始</string>
+    <string name="welword_three">春天的第一只蝴蝶\n身披橙色和紫色\n从我路上飞过\n一朵飞行的花\n改变了\n我生活的颜色</string>
+    <string name="login">登录</string>
+    <string name="to_register">去注册</string>
+    <string name="forget_password">忘记密码?</string>
+    <string name="register">注册</string>
+    <string name="name">昵称</string>
+    <string name="password">密码</string>
+    <string name="pass_again">确认密码</string>
+    <string name="boy">男</string>
+    <string name="girl">女</string>
+    <string name="description">简介</string>
+    <string name="age">年龄</string>
+    <string name="reset_pwd">重置密码</string>
+    <string name="login_out">退出登录</string>
+    <string name="user_info">个人信息</string>
+    <string name="sex">性别</string>
+    <string name="edit_info">编辑资料</string>
+    <string name="finish_edit">完成修改</string>
+    <string name="check_express">查快递</string>
+    <string name="check_phont">归属地查询</string>
+    <string name="check">查询</string>
+    <string name="send">发送</string>
+    <string name="check_phone_belong">输入手机号查询归属地</string>
+    <string name="china_yidong">中国移动</string>
+    <string name="girl_fuli">福利</string>
+
+</resources>
