@@ -11,10 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.owenandroid.keepeye.fragment.ArticleFragment;
 import com.owenandroid.keepeye.fragment.ButlerFragment;
 import com.owenandroid.keepeye.fragment.GirlFragment;
 import com.owenandroid.keepeye.fragment.UserFragment;
+import com.owenandroid.keepeye.zhihu.ZhihuDailyFragment;
+import com.owenandroid.keepeye.zhihu.ZhihuDailyPresenter;
 import com.owenandroid.keepeye.ui.SettingActivity;
 
 import java.util.ArrayList;
@@ -88,15 +89,21 @@ public class MainActivity extends AppCompatActivity {
         //填充tab的标题
         titles = new ArrayList<>();
         titles.add(getString(R.string.chat_robot));
-        titles.add(getString(R.string.article));
+//        titles.add(getString(R.string.article));
+        titles.add("知乎日报");
         titles.add(getString(R.string.girlphoto));
         titles.add(getString(R.string.user));
+
         //填充viewpager的四个fragment
         fragmentList = new ArrayList<>();
         fragmentList.add(new ButlerFragment());
-        fragmentList.add(new ArticleFragment());
+//        fragmentList.add(new ArticleFragment());
+        ZhihuDailyFragment fragment = new ZhihuDailyFragment();
+        fragmentList.add(fragment);
         fragmentList.add(new GirlFragment());
         fragmentList.add(new UserFragment());
+        ZhihuDailyPresenter presenter =
+                new ZhihuDailyPresenter("https://news-at.zhihu.com/api/4/news/latest", fragment);
     }
 
     /**
