@@ -3,13 +3,14 @@ package com.owenandroid.keepeye.ui;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.owenandroid.keepeye.MainActivity;
 import com.owenandroid.keepeye.R;
@@ -19,8 +20,8 @@ import com.owenandroid.keepeye.utils.L;
 import com.owenandroid.keepeye.utils.ShareUtils;
 import com.owenandroid.keepeye.utils.UtilTools;
 
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.SaveListener;
+//import cn.bmob.v3.exception.BmobException;
+//import cn.bmob.v3.listener.SaveListener;
 
 /**
  * Created by Administrator on 2017/4/9.
@@ -67,35 +68,35 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     dialog.setMessage("登录中...");
                     dialog.show();
                     MyUser user = new MyUser();
-                    user.setUsername(name);
-                    user.setPassword(password);
-                    user.login(new SaveListener<MyUser>() {
-                        @Override
-                        public void done(MyUser myUser, BmobException e) {
-                            if (e == null){
-                                //判断是否要记住账号密码
-                                if(cbKeepInput.isChecked()){
-                                    ShareUtils.putString(LoginActivity.this,
-                                            AppConfig.SHAREUTILS_KEY_USER_NAME_INPUT,name);
-                                    ShareUtils.putString(LoginActivity.this,
-                                            AppConfig.SHAREUTILS_KEY_USER_PASSWORD_INPUT, password);
-                                }else{
-                                    ShareUtils.delete(LoginActivity.this,
-                                            AppConfig.SHAREUTILS_KEY_USER_NAME_INPUT);
-                                    ShareUtils.delete(LoginActivity.this,
-                                            AppConfig.SHAREUTILS_KEY_USER_PASSWORD_INPUT);
-                                }
-                                dialog.dismiss();
-                                UtilTools.toast(LoginActivity.this,"登录成功");
-                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                                finish();
-                            }else{
-                                dialog.dismiss();
-                                UtilTools.toast(LoginActivity.this,"登录失败");
-                                L.e(LoginActivity.this,e.toString());
-                            }
-                        }
-                    });
+//                    user.setUsername(name);
+//                    user.setPassword(password);
+//                    user.login(new SaveListener<MyUser>() {
+//                        @Override
+//                        public void done(MyUser myUser, BmobException e) {
+//                            if (e == null){
+//                                //判断是否要记住账号密码
+//                                if(cbKeepInput.isChecked()){
+//                                    ShareUtils.putString(LoginActivity.this,
+//                                            AppConfig.SHAREUTILS_KEY_USER_NAME_INPUT,name);
+//                                    ShareUtils.putString(LoginActivity.this,
+//                                            AppConfig.SHAREUTILS_KEY_USER_PASSWORD_INPUT, password);
+//                                }else{
+//                                    ShareUtils.delete(LoginActivity.this,
+//                                            AppConfig.SHAREUTILS_KEY_USER_NAME_INPUT);
+//                                    ShareUtils.delete(LoginActivity.this,
+//                                            AppConfig.SHAREUTILS_KEY_USER_PASSWORD_INPUT);
+//                                }
+//                                dialog.dismiss();
+//                                UtilTools.toast(LoginActivity.this,"登录成功");
+//                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//                                finish();
+//                            }else{
+//                                dialog.dismiss();
+//                                UtilTools.toast(LoginActivity.this,"登录失败");
+//                                L.e(LoginActivity.this,e.toString());
+//                            }
+//                        }
+//                    });
                 }else{
                     UtilTools.toast(LoginActivity.this,"用户名密码不能为空");
                 }

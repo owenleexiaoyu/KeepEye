@@ -15,8 +15,6 @@ public class AppConfig {
     public static final String SHAREUTILS_KEY_USER_PASSWORD_INPUT = "login_password";
     //腾讯Bugly的APPID
     public static final String BUGLY_APP_ID = "dd5e72a87b";
-    //Bmob的APPID
-    public static final String BMOB_APP_ID = "26fbb8f3ad9823b8254bd1d3aad321d0";
     //快递查询的key
     public static final String EXPRESS_KEY = "78752e0a9f7eb18e06da849b526e4944";
     //归属地查询的key

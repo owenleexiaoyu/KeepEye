@@ -62,7 +62,7 @@ public class ArticleAdapter extends BaseAdapter {
         holder.tvLabel.setText(data.getLabel());
         holder.tvUserName.setText(data.getUserName());
         //使用Picasso加载文章图片
-        Picasso.with(context).load(data.getImageUrl()).resize(120,70).into(holder.imgPicture);
+        Picasso.get().load(data.getImageUrl()).resize(120,70).into(holder.imgPicture);
         return convertView;
     }
     class ViewHolder{

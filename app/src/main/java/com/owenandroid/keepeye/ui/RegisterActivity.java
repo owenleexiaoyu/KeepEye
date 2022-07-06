@@ -12,8 +12,6 @@ import com.owenandroid.keepeye.R;
 import com.owenandroid.keepeye.model.MyUser;
 import com.owenandroid.keepeye.utils.UtilTools;
 
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.SaveListener;
 
 /**
  * Created by Administrator on 2017/4/9.
@@ -69,25 +67,9 @@ public class RegisterActivity extends BaseActivity {
                         dialog.setMessage("注册中...");
                         dialog.show();
                         MyUser user = new MyUser();
-                        user.setUsername(name);
-                        user.setPassword(password);
                         user.setAge(Integer.parseInt(age));
                         user.setSex(isBoy);
                         user.setDesc(TextUtils.isEmpty(description)?"这个人很懒，什么也没留下。":description);
-                        user.signUp(new SaveListener<MyUser>() {
-                            @Override
-                            public void done(MyUser myUser, BmobException e) {
-                                if (e != null){
-                                    //注册成功
-                                    dialog.dismiss();
-                                    UtilTools.toast(RegisterActivity.this,"注册成功");
-                                    finish();
-                                }else{
-                                    dialog.dismiss();
-                                    UtilTools.toast(RegisterActivity.this,"注册失败："+e.toString());
-                                }
-                            }
-                        });
                     }else{
                         UtilTools.toast(RegisterActivity.this,"两次密码不一致");
                     }

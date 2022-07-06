@@ -13,11 +13,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.owenandroid.keepeye.R;
-import com.owenandroid.keepeye.model.MyUser;
-
-import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.UpdateListener;
 
 /**
  * Created by Administrator on 2017/4/10.
@@ -43,16 +38,6 @@ public class InfoActivity extends BaseActivity implements View.OnClickListener {
         edAge.setEnabled(false);
         edDesc.setEnabled(false);
         btnSex.setEnabled(false);
-        //获取用户数据
-        MyUser currentUser = BmobUser.getCurrentUser(MyUser.class);
-        edName.setText(currentUser.getUsername());
-        edAge.setText(currentUser.getAge()+"");
-        edDesc.setText(currentUser.getDesc());
-        btnSex.setText(currentUser.isSex()?getString(R.string.boy):getString(R.string.girl));
-        //更改性别
-        btnSex.setOnClickListener(this);
-        //完成修改
-        btnFinish.setOnClickListener(this);
     }
 
     @Override
@@ -109,24 +94,24 @@ public class InfoActivity extends BaseActivity implements View.OnClickListener {
                 String age = edAge.getText().toString().trim();
                 String desc = edDesc.getText().toString().trim();
                 boolean isBoy = ("男".equals(btnSex.getText().toString()))?true:false;
-                MyUser user = BmobUser.getCurrentUser(MyUser.class);
-                user.setUsername(name);
-                user.setAge(Integer.parseInt(age));
-                user.setDesc(desc);
-                user.setSex(isBoy);
-                user.update(new UpdateListener() {
-                    @Override
-                    public void done(BmobException e) {
-                        dialog.dismiss();
-                        if (e == null){
-                            //修改成功
-                            Toast.makeText(InfoActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
-                            finish();
-                        }else{
-                            Toast.makeText(InfoActivity.this, "修改失败："+e.toString(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+//                MyUser user = BmobUser.getCurrentUser(MyUser.class);
+//                user.setUsername(name);
+//                user.setAge(Integer.parseInt(age));
+//                user.setDesc(desc);
+//                user.setSex(isBoy);
+//                user.update(new UpdateListener() {
+//                    @Override
+//                    public void done(BmobException e) {
+//                        dialog.dismiss();
+//                        if (e == null){
+//                            //修改成功
+//                            Toast.makeText(InfoActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
+//                            finish();
+//                        }else{
+//                            Toast.makeText(InfoActivity.this, "修改失败："+e.toString(), Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                });
                 break;
         }
     }

@@ -1,6 +1,6 @@
 package com.owenandroid.keepeye.zhihu;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.kymjs.rxvolley.RxVolley;
 import com.kymjs.rxvolley.client.HttpCallback;

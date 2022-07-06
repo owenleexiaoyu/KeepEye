@@ -75,13 +75,13 @@ public class PhoneActivity extends BaseActivity{
                         tvResult.setText(belong);
                         switch (company){
                             case "移动":
-                                Picasso.with(PhoneActivity.this).load(R.mipmap.yidong).into(imgIcon);
+                                Picasso.get().load(R.mipmap.yidong).into(imgIcon);
                                 break;
                             case "联通":
-                                Picasso.with(PhoneActivity.this).load(R.mipmap.liantong).into(imgIcon);
+                                Picasso.get().load(R.mipmap.liantong).into(imgIcon);
                                 break;
                             case "电信":
-                                Picasso.with(PhoneActivity.this).load(R.mipmap.dianxin).into(imgIcon);
+                                Picasso.get().load(R.mipmap.dianxin).into(imgIcon);
                                 break;
                         }
                     }

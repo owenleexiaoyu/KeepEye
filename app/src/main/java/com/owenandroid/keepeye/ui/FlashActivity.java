@@ -4,18 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.owenandroid.keepeye.MainActivity;
 import com.owenandroid.keepeye.R;
-import com.owenandroid.keepeye.model.MyUser;
 import com.owenandroid.keepeye.utils.AppConfig;
 import com.owenandroid.keepeye.utils.ShareUtils;
 import com.owenandroid.keepeye.utils.UtilTools;
 
-import cn.bmob.v3.BmobUser;
 
 /**
  * 程序的入口activity，闪屏页
@@ -36,14 +35,6 @@ public class FlashActivity extends AppCompatActivity {
                     }else{
                         //不是第一次启动,判断是否已经登录，如果没登录就跳转至登录页
                         //获取当前的用户，未登录时返回null
-//                        MyUser currentUser = BmobUser.getCurrentUser(MyUser.class);
-//                        if(currentUser == null){
-//                            //未登录，跳转至登录页
-//                            startActivity(new Intent(FlashActivity.this,LoginActivity.class));
-//                        }else{
-//                            //登录过，直接跳转到主界面
-//                            startActivity(new Intent(FlashActivity.this,MainActivity.class));
-//                        }
                         startActivity(new Intent(FlashActivity.this,MainActivity.class));
                     }
                     finish();

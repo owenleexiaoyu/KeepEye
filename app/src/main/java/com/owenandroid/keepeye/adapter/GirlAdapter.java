@@ -56,7 +56,7 @@ public class GirlAdapter extends BaseAdapter {
             hOlder = (ViewHOlder) convertView.getTag();
         }
         GirlData data = mDataList.get(position);
-        Picasso.with(mContext).load(data.getImgUrl()).resize(width/2 - 20,width/2).into(hOlder.imgGirl);
+        Picasso.get().load(data.getImgUrl()).resize(width/2 - 20,width/2).into(hOlder.imgGirl);
         return convertView;
     }
     class ViewHOlder{
